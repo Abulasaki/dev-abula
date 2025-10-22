@@ -1,0 +1,131 @@
+<h1 mat-dialog-title>Student Deatails </h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="studentForm">
+
+    <mat-form-field class="example-full-width-20" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input formControlName="Firstname" matInput>
+      <div class="text-danger"
+        *ngIf="this.studentForm.get('Firstname')?.hasError('required')  && this.studentForm.get('Firstname')?.touched">
+        FirstName isrequired</div>
+
+
+    </mat-form-field>
+    <mat-form-field class="example-full-width-50" appearance="fill">
+      <mat-label>Last name</mat-label>
+
+      <input formControlName="lastname" matInput>
+      <div class="text-danger"
+        *ngIf="this.studentForm.get('lastname')?.hasError('required')  && this.studentForm.get('lastname')?.touched">
+        LastName isrequired</div>
+
+    </mat-form-field>
+
+
+    <div mat-dialog-content>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>standard</mat-label>
+        <input formControlName="standard" matInput>
+        <div class="text-danger"
+          *ngIf="this.studentForm.get('standard')?.hasError('required')  && this.studentForm.get('standard')?.touched">
+          must enter your standard</div>
+
+      </mat-form-field>
+
+
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Roll NO</mat-label>
+        <input formControlName="RollNO" matInput type="number">
+        <div class="text-danger"
+          *ngIf="this.studentForm.get('RollNO')?.hasError('required')  && this.studentForm.get('RollNO')?.touched">must
+          enter your Roll Number</div>
+
+
+      </mat-form-field>
+    </div>
+    <div mat-dialog-content>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input formControlName="Address" matInput>
+        <div class="text-danger"
+          *ngIf="this.studentForm.get('Address')?.hasError('required')  && this.studentForm.get('Address')?.touched">
+          Address is required</div>
+
+
+      </mat-form-field>
+      <h1>MARKS</h1>
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>tamil</mat-label>
+      <input formControlName="tamil" matInput>
+      <div class="text-danger" *ngIf="this.studentForm.get('tamil')?.hasError('required')  && this.studentForm.get('tamil')?.touched">Address is required</div>
+
+
+    </mat-form-field> -->
+      <!-- <ng-container matColumnDef="tamil">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tamil</th>
+      <td mat-cell *matCellDef="let row"> {{row.tamil}} </td>
+    </ng-container> -->
+
+      <!-- Progress Column -->
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>tamil</mat-label>
+        <input formControlName="tamil" matInput>
+        <!-- <div class="text-danger" *ngIf="this.studentForm.get('tamil')?.hasError('required')  && this.studentForm.get('tamil')?.touched">Address is required</div> -->
+
+
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>English</mat-label>
+        <input formControlName="English" matInput>
+        <!-- <div class="text-danger" *ngIf="this.studentForm.get('English')?.hasError('required')  && this.studentForm.get('English')?.touched">Address is required</div>
+ -->
+
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Maths</mat-label>
+        <input formControlName="Maths" matInput>
+        <!-- <div class="text-danger" *ngIf="this.studentForm.get('Maths')?.hasError('required')  && this.studentForm.get('Maths')?.touched">Address is required</div>
+ -->
+
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>physics</mat-label>
+        <input formControlName="physics" matInput>
+        <!-- <div class="text-danger" *ngIf="this.studentForm.get('physics')?.hasError('required')  && this.studentForm.get('physics')?.touched">Address is required</div>
+ -->
+
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>computerscience</mat-label>
+        <input formControlName="computerscience" matInput>
+        <!-- <div class="text-danger" *ngIf="this.studentForm.get('computerscience')?.hasError('required')  && this.studentForm.get('computerscience')?.touched">Address is required</div>
+ -->
+
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Chemistry</mat-label>
+        <input formControlName="Chemistry" matInput>
+        <!-- <div class="text-danger" *ngIf="this.studentForm.get('tamil')?.hasError('required')  && this.studentForm.get('tamil')?.touched">Address is required</div>
+ -->
+
+      </mat-form-field>
+
+      <!-- <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> total</th>
+      <td mat-cell *matCellDef="let row" (click)="Result()"></td> 
+    </ng-container> -->
+    </div>
+    <div mat-dialog-action [align]="'end'">
+
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="Addstudent()">{{actionBtn}}</button>
+
+
+    </div>
+
+  </form>
+</div>

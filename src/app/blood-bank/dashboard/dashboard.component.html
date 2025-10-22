@@ -1,0 +1,90 @@
+<div class="container-fluid p-4" style="background-color: #f5f7fa; min-height: 100vh;">
+  <h2 class="mb-4 text-center" style="color: #d32f2f;">Blood Bank Dashboard</h2>
+
+  <div class="row g-4">
+    <!-- Total Donors Card -->
+    <div class="col-md-3">
+      <div class="card text-white" style="background: linear-gradient(135deg, #f44336, #e57373); border-radius: 15px;">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="card-title">Total Donors</h5>
+              <h2 class="card-text">1250</h2>
+            </div>
+            <div>
+              <i class="material-icons" style="font-size: 50px; opacity: 0.3;">people</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Available Blood Units Card -->
+    <div class="col-md-3">
+      <div class="card text-white" style="background: linear-gradient(135deg, #ff9800, #ffc107); border-radius: 15px;">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="card-title">Available Units</h5>
+              <h2 class="card-text">430</h2>
+            </div>
+            <div>
+              <i class="material-icons" style="font-size: 50px; opacity: 0.3;">local_hospital</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requests Card -->
+    <div class="col-md-3">
+      <div class="card text-white" style="background: linear-gradient(135deg, #2196f3, #64b5f6); border-radius: 15px;">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="card-title">Requests</h5>
+              <h2 class="card-text">87</h2>
+            </div>
+            <div>
+              <i class="material-icons" style="font-size: 50px; opacity: 0.3;">assignment</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admins Card -->
+    <div class="col-md-3">
+      <div class="card text-white" style="background: linear-gradient(135deg, #4caf50, #81c784); border-radius: 15px;">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="card-title">Admins</h5>
+              <h2 class="card-text">5</h2>
+            </div>
+            <div>
+              <i class="material-icons" style="font-size: 50px; opacity: 0.3;">admin_panel_settings</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Graph/Chart Section -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="card p-3" style="border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <h5>Blood Type Distribution</h5>
+        <canvas id="bloodChart"></canvas>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card p-3" style="border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <h5>Monthly Donations</h5>
+        <canvas id="donationChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

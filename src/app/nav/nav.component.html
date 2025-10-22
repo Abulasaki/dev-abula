@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container sidenav-expand-lg-2" >
+  <mat-sidenav #drawer class="sidenav sidenav-expand-lg"fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+    <mat-nav-list>
+
+      <a mat-list-item href="" ><mat-icon>home</mat-icon>Home</a>
+      <a mat-list-item href="/rank"><mat-icon>chrome_reader_mode</mat-icon>Students Mark</a>
+      <a mat-list-item href="/student"><mat-icon>credit_card</mat-icon>student</a>
+      <a mat-list-item href="/registration"><mat-icon>credit_card</mat-icon>Registerform</a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar color="warn">
+      <button class="navbar-toggler"
+        type="button"
+        aria-label="Toggle sidenav"aria-expanded="true"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon" >menu</mat-icon>
+      </button>
+      <span>form</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Hidden brand</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav> -->

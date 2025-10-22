@@ -1,0 +1,110 @@
+<!-- <div class="row">
+    <div class="col-sm-4">
+      <div class="card m-2" style="width: 20rem">
+          <img class="card-img-top" src="../../assets/download (1).png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Angular 7 full course</h5>
+            <p class="card-text">Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.
+  
+              These Angular docs help you learn and use the Angular framework and development platform, from your first application to optimizing complex single-page apps for enterprises. Tutorials and guides include downloadable examples to accelerate your projects.</p>
+            <a  class="btn btn-danger" >Read More</a>
+        
+        </div>
+      </div>
+    </div>
+    -->
+<div class="row">
+    <div class="col-md-4" *ngFor="let item of courselist">
+        <ng-container>
+            <div class="card" >
+                <img class="card-img-top" [src]="'assets/'+item.image" alt="Card image cap">
+                
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="card-text"> {{item.coursename}}</p>
+                    <p class="card-text"> {{item.postedon}}</p>
+                    <a class="btn btn-danger">Add to cart</a>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+
+<!--     
+      
+      
+          <div class="col-4">
+            <div class="card m-2"style="width: 20rem">
+              <div class="card-body">
+                  <img class="card-img-top" src="../../assets/download.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h2 class="card-title">PYTHON full course</h2>
+                    <p class="card-text">Python is a computer programming language often used to build websites and software, automate tasks, and conduct data analysis. Python is a general-purpose language, meaning it can be used to create a variety of different programs and isn't specialized for any specific problems.26-May-2022</p>
+                    <a  class="btn btn-danger">Read More</a>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="col-4">
+            <div class="card m-2"style="width: 20rem">
+              <div class="card-body">
+                  <img class="card-img-top" src="../../assets/download (2).png" alt="Card image cap">
+                  <div class="card-body">
+                    <h2 class="card-title">Angular material</h2>
+                    <p class="card-text">Angular material is an application design framework and development platform for creating efficient and sophisticated single-page apps.
+          
+                      These Angular docs help you learn and use the Angular framework and development platform, from your first application to optimizing complex single-page apps for enterprises. Tutorials and guides include downloadable examples to accelerate your projects.</p>
+                    <a  class="btn btn-danger">Read More</a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4">
+        <div class="card m-2" style="width: 20rem">
+            <img class="card-img-top" src="../../assets/imagesjs.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Type scripy</h5>
+              <p class="card-text">
+                  Is TypeScript used on the frontend or the backend? TypeScript is compiled to JavaScript. Therefore, TS can be used anywhere JS could be used: both the frontend and the backend. JavaScript is the most popular language to implement scripting for the frontend of apps and web pages.18-Jun-2020
+       </p>
+              <a  class="btn btn-danger">Read More</a>
+          
+          </div>
+        </div>
+      </div>
+      
+        
+        
+            <div class="col-4">
+              <div class="card m-2"style="width: 20rem">
+                <div class="card-body">
+                    <img class="card-img-top" src="../../assets/download css.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h2 class="card-title">css full course</h2>
+                      <p class="card-text">HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual and aural) layout, for a variety of devices</p>
+                      <a  class="btn btn-danger">Read More</a>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+            <div class="col-4">
+              <div class="card " style="width: 20rem">
+                <div class="card-body">
+                    <img class="card-img-top" src="../../assets/download (1).jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h2 class="card-title">Entity Framework</h2>
+                      <p class="card-text">The Entity Framework enables developers to work with data in the form of domain-specific objects and properties, such as customers and customer addresses, without having to concern themselves with the underlying database tables and columns where this data is stored.</p>
+                      <a  class="btn btn-danger">Read More</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+             
+      
+      
+   -->

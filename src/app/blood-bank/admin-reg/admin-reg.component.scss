@@ -1,0 +1,64 @@
+.login-page {
+  min-height: 100vh;
+     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding-top: 50px;
+}
+
+.login-card {
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.logo-img {
+  max-width: 120px;
+  border-radius: 50%;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+}
+
+.register-link {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+.fw-custom {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #0d47a1;
+  padding: 2rem; /* spacing below login card */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+// .mat-dialog-content
+// {
+//   overflow: auto !important;
+// }
+.full-screen-dialog .mat-mdc-dialog-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-screen-dialog .mat-mdc-dialog-surface {
+  border-radius: 0 !important;
+  height: 100%;
+  overflow: auto !important;
+}

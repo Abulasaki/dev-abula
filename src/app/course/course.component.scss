@@ -1,0 +1,26 @@
+.card
+{
+    width: 370px;
+    height: 250px;
+    &:hover{
+      background-color: rgb(161, 161, 196);
+    }
+}
+.card-img-top
+{
+    height: 80px;
+}
+.card-text
+{
+    font-size: 20px;
+    width: 100px;
+    
+    font-style:initial;
+    align-items: center;
+    
+}
+.card-title
+{
+    font-size: 18px;
+    
+}

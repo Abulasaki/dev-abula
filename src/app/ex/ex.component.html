@@ -1,0 +1,112 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" ariea-label="example-icon with menu icon">
+        <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <span>Student Result</span>
+<span class="example-spacer"></span>
+<button mat-raised-button color="warn" (click)="open()">ADD Student</button>
+</mat-toolbar>
+
+
+<div class="container">
+    <div class="margin-top:20px;">
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input>
+      </mat-form-field>
+  
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+    
+          <ng-container matColumnDef="Firstname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> FirstName </th>
+            <td mat-cell *matCellDef="let row"> {{row.Firstname}} </td>
+          </ng-container>
+  
+       
+          <ng-container matColumnDef="lastname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> LastName </th>
+            <td mat-cell *matCellDef="let row"> {{row.lastname}} </td>
+          </ng-container>
+  
+     
+          <ng-container matColumnDef="standard">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> standard </th>
+            <td mat-cell *matCellDef="let row"> {{row.standard}} </td>
+  
+          </ng-container>
+  
+        
+          <ng-container matColumnDef="regno">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> RollNO </th>
+            <td mat-cell *matCellDef="let row"> {{row.regno}} </td>
+  
+  
+  
+          </ng-container>
+          <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+            <td mat-cell *matCellDef="let row"> {{row.Address}} </td>
+          </ng-container>
+          <ng-container matColumnDef="class">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> class </th>
+            <td mat-cell *matCellDef="let row"> {{row.class}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tamil">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Tamil</th>
+            <td mat-cell *matCellDef="let row"> {{row.tamil}} </td>
+          </ng-container>
+          <ng-container matColumnDef="English">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> English</th>
+            <td mat-cell *matCellDef="let row"> {{row.English}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Maths">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Maths</th>
+            <td mat-cell *matCellDef="let row"> {{row.Maths}} </td>
+          </ng-container>
+          <ng-container matColumnDef="physics">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> physics </th>
+            <td mat-cell *matCellDef="let row"> {{row.physics}} </td>
+          </ng-container>
+          <ng-container matColumnDef="computerscience">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> computerscience </th>
+            <td mat-cell *matCellDef="let row"> {{row.computerscience}} </td>
+          </ng-container>
+          <ng-container matColumnDef="Chemistry">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Chemistry</th>
+            <td mat-cell *matCellDef="let row"> {{row.Chemistry}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+            <td mat-cell *matCellDef="let row">
+  
+              <button mat-icon-button color="primary" (click)="edit(row)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deletestudent(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+       
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter </td>
+      </tr>
+    </table>
+          
+    
+      <mat-paginator [pageSizeOptions]="[3,6 ,9,12,15, 100]" aria-label="Select page of users"></mat-paginator>
+   
+    </div>
+</div>
+

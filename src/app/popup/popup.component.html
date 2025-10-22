@@ -1,0 +1,54 @@
+<head><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<mat-toolbar color="warn">
+  
+
+<mat-toolbar-row>
+  <button mat-icon-button>
+    <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+  </button>
+  <h1>Tasks</h1>
+</mat-toolbar-row>
+
+
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true">
+      <mat-nav-list>
+      <!-- <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button">
+        <mat-icon>chrome_reader_mode</mat-icon>
+        <span>registration form</span>
+      </button>
+      <button mat-button class="menu-button">
+      <mat-icon>credit_card</mat-icon>
+        <span >Student marks</span>
+      </button> -->
+      <a mat-list-item routerLink="/rank" routerLinkActive="list-item-active"><mat-icon>home</mat-icon>Home</a>
+      <a mat-list-item routerLink="/registration"routerLinkActive="list-item-active"><mat-icon>chrome_reader_mode</mat-icon>RegistrationForms</a>
+      <a mat-list-item routerLink="/app"routerLinkActive="list-item-active"><mat-icon>credit_card</mat-icon>Student Mark</a>
+      </mat-nav-list>
+      
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height:88vh">
+      </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+    
+    <!-- <mat-sidenav-content>
+      <div class="content">
+        main content
+      </div>
+      <mat-side-nav-list>
+
+      </mat-side-nav-list>
+    </mat-sidenav-content> -->
+    
+    
+    
+    

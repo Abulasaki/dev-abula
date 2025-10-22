@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>ADD-COURSE</h1>
+<div mat-dialog-content>
+    <form [formGroup]="course">
+        
+        <div class="form-group">
+            <label for="exampleFormControlFile1">upload image  :</label>
+            <input type="file" class="form-control-file"  formControlName="image">
+          </div>
+          <div class="row">
+          <div class="col-md-6">
+          <mat-form-field class="example-full-width-20" appearance="fill">
+            <mat-label>Coursename</mat-label>
+            <input formControlName="coursename" matInput>
+          </mat-form-field>
+          </div>
+          <mat-form-field class="example-full-width-20" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input formControlName="title" matInput>
+          </mat-form-field>
+        </div>
+      
+        <div class="col-md-6"></div>
+          
+          <mat-form-field class="example-full-width-20" appearance="fill">
+            <mat-label>Posted on</mat-label>
+            <input formControlName="postedon" matInput>
+          </mat-form-field>
+          
+            <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="Addcourse()">{{actionBtn}}</button>
+          
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            
+
+    </form>
+
+</div>

@@ -1,0 +1,29 @@
+<form [formGroup]="contactForm">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1>Contact us</h1>
+                <div class="card p-3 m-2">
+    <label for="name">Name</label>
+    <input class="form-control" formControlName="name"id="name" placeholder="abu" ><br>
+    <label for="email">Email</label>
+    <input type="email"class="form-control" formControlName="email"id="email" placeholder="abu12@gmail.com" ><br>
+    <label for="phonenumber">phoneno</label>
+    <input type="number"class="form-control" formControlName="phonenumber"id="phonenumber" placeholder="98776543210" ><br>
+    <!-- <label for="floatingTextarea">Message</label>
+    <textArea class="form-control" formControlName="Message"id="Message" ></textArea><br>-->
+    <div class="form-floating">
+       <textarea class="form-control" formControlName="Message" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+        <label for="floatingTextarea" formControlName="Message">Message</label>
+      </div>
+
+
+       <div class=" md-3">
+        <button type="submit" class="btn btn-success" (click)="send()">send</button>
+    </div>
+  </div>
+  </div>
+  </div>
+    </div>
+</form>

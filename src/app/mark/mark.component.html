@@ -1,0 +1,58 @@
+<p>mark works!</p>
+<div class="container">
+    <div class="margin-top:10px;">
+        <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" #input>
+          </mat-form-field>
+          
+          <div class="mat-elevation-z8 ">
+            <form [formGroup]="markForm">
+            <table mat-table [dataSource]="dataSource" matSort>
+<!-- 
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>tamil</mat-label>
+    <input formControlName="tamil" matInput>
+   
+
+  </mat-form-field> 
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>English</mat-label>
+    <input formControlName="English" matInput>
+  
+
+
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Maths</mat-label>
+    <input formControlName="Maths" matInput>
+    
+
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>physics</mat-label>
+    <input formControlName="physics" matInput>
+   
+
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>computerscience</mat-label>
+    <input formControlName="computerscience" matInput>
+    
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Chemistry</mat-label>
+    <input formControlName="Chemistry" matInput>
+    
+  </mat-form-field>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+   Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[3,6 ,9,12,15, 100]" aria-label="Select page of users"></mat-paginator>

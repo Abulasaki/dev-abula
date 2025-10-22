@@ -1,0 +1,78 @@
+<h1 mat-dialog-details>student details</h1>
+<div mat-dialog content>
+    <form [formGroup]="form">
+        
+            
+    
+    
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Firstname</mat-label>
+            <input formControlName="Firstname"  matInput >
+            <div class="text-danger"
+            *ngIf="this.form.get('Firstname')?.hasError('required')  && this.form.get('Firstname')?.touched">
+            Firstname isrequired</div>
+    
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>lastname</mat-label>
+            <input formControlName="lastname" matInput>
+            <div class="text-danger"
+            *ngIf="this.form.get('lastname')?.hasError('required')  && this.form.get('lastname')?.touched">
+            lastName isrequired</div>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill" >
+            <mat-label>standard</mat-label>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            
+            <input formControlName="standard" matInput>
+        </mat-form-field>
+        <div mat-dialog-content>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>class</mat-label>
+            <input formControlName="class" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>regno</mat-label>
+            <input formControlName="regno" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address</mat-label>
+            <input formControlName="Address" matInput>
+        </mat-form-field>
+        </div>
+        <h1>Marks</h1>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Tamil</mat-label>
+            <input formControlName="tamil" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>English</mat-label>
+            <input formControlName="English" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Maths</mat-label>
+            <input formControlName="Maths" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>physics</mat-label>
+            <input formControlName="physics" matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Chemistry</mat-label>
+            <input formControlName="Chemistry" matInput>
+        </mat-form-field>
+        <div mat-dialog-action="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary" (click)=add()>{{actionBtn}}
+
+            </button>
+        </div>
+        
+        
+    </form>
+</div>
+
+
+
+
+

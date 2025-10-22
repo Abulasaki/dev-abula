@@ -1,0 +1,59 @@
+<p>login works!</p>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="card-body">
+            <h5 class="card-title text-center">Login</h5>
+            <div class="mb-3 row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" formControlName="email" required class="form-control" id="staticEmail" value="">
+                <span class="text-danger"*ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">emailis required</span>
+               
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" formControlName="password" required class="form-control" id="inputPassword" value="">
+                <span class ="text-danger"*ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">password required</span>
+         
+                
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="flex-container">
+  <div>Mango db</div>
+  <div>web Api</div>
+  <div>Enitity framework</div>
+  <div>Linq</div>
+</div>
+<div class="flex-container">
+  <div>sql server</div>
+  <div>Dbms</div>
+  <div>Enitity framework</div>
+  <div>Mvc</div>
+</div>
+<div class="flex-container">
+  <div>c</div>
+  <div>c++</div>
+  <div>Azure</div>
+  <div>css</div>
+</div>
+<div class="flex-container">
+  <div>Dot net core</div>
+  <div>Ado.net</div>
+  <div>web services</div>
+  <div>c sharp</div>
+</div>

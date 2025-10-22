@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>Request Blood</h2>
+<form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <!-- Hospital Name -->
+    <mat-form-field style="width:100%">
+      <mat-label>Hospital Name</mat-label>
+      <input matInput formControlName="hospital" placeholder="Enter hospital name" required>
+    </mat-form-field>
+
+    <!-- Blood Group -->
+    <mat-form-field style="width:100%">
+      <mat-label>Blood Group</mat-label>
+      <mat-select formControlName="bloodGroup" required>
+        <mat-option value="A+">A+</mat-option>
+        <mat-option value="A-">A-</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B-">B-</mat-option>
+        <mat-option value="O+">O+</mat-option>
+        <mat-option value="O-">O-</mat-option>
+        <mat-option value="AB+">AB+</mat-option>
+        <mat-option value="AB-">AB-</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Quantity -->
+    <mat-form-field style="width:100%">
+      <mat-label>Quantity (units)</mat-label>
+      <input matInput type="number" formControlName="quantity" required>
+    </mat-form-field>
+
+    <!-- Date -->
+     <mat-form-field style="width:100%">
+      <mat-label>Last Donate Date</mat-label>
+      <input matInput type="date" formControlName="date">
+    </mat-form-field>
+    <!-- Time -->
+    <mat-form-field style="width:100%">
+      <mat-label>Required Time</mat-label>
+      <input matInput type="time" formControlName="time" required>
+    </mat-form-field>
+
+    <!-- Notes -->
+    <mat-form-field style="width:100%">
+      <mat-label>Reason / Notes</mat-label>
+      <textarea matInput formControlName="notes"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!requestForm.valid">
+      Submit Request
+    </button>
+  </mat-dialog-actions>
+</form>

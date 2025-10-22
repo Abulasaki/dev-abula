@@ -1,0 +1,301 @@
+<p>registration works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card ">
+                 <!-- {{registrationForm.value | json}}  -->
+                <form [formGroup]="registrationForm"  (ngSubmit)="onSubmit()">
+                    <div class="card-body">
+                        <h2 class="card-title text-center"><b>Registration Form</b></h2>
+                        <div class="mb-3 row">
+                            <label>PropertyType<sup>*</sup></label>
+                            <div class="custom-control custom-radio custom-control-inline " >
+                                <input type="radio" id="defaultInline1" name="propertyType"
+                                    formControlName="propertyType" value="1" >
+                                <label class="custom-control-label" for="defaultInline1"
+                                    aria-checked="true">Recendtial</label>
+                                <input type="radio" id="defaultInline2" name="propertyType"
+                                    formControlName="propertyType" value="2" checked>
+                                <label class="custom-control-label" for="defaultInline2"
+                                    aria-checked="true">Retail</label>
+                                <input type="radio" id="defaultInline3" name="propertyType"
+                                    formControlName="propertyType" value="3">
+                                <label class="custom-control-label" for="defaultInline3"
+                                    aria-checked="true">Commercial</label>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <h3>Title<sup>*</sup></h3>
+                            <div>
+                                <div class=" inlineDefaultRadios">
+                                    <input type="radio" id="Inline4" name="inlineDefaultRadios" checked>
+                                    <label class="custom-control-label" for="Inline4" aria-checked="true"
+                                        value="4">Mr</label>
+
+                                    <input type="radio" id="Inline5" name="inlineDefaultRadios">
+                                    <label class="custom-control-label" for="Inline5" data-toggle-value="5">
+                                        .ms</label>
+                                    <input type="radio" id="Inline6" name="inlineDefaultRadios">
+                                    <label class="custom-control-label" for="Inline6" value="6">Mrs</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="firstName">
+                                    <p>firstName<sup>*</sup></p>
+                                </label>
+                                <input type="text" formControlName="FirstName" class="form-control" id="FirstName"
+                                    placeholder="Firstname">
+
+                                <span class="text-danger"
+                                    *ngIf="this.registrationForm.get('FirstName')?.hasError('required') && this.registrationForm.get('FirstName')?.touched">firstName
+                                    isrequired</span>
+
+                                <div class="col">
+                                    <label for="LastName">
+                                        <p>LastName<sup>*</sup></p>
+                                    </label>
+                                    <input type="text" formControlName="LastName" required class="form-control"
+                                        id="LastName" placeholder="Lastname">
+                                    <span class="text-danger"
+                                        *ngIf="this.registrationForm.get('LastName')?.hasError('required') && this.registrationForm.get('LastName')?.touched">lastName
+                                        isrequired</span>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="showdiv"
+                                        *ngIf="registrationForm.get('propertyType')?.value=='2'|| registrationForm.get('propertyType')?.value=='3'">
+                                        <label form="Company">Company VAT status<sup>*</sup></label>
+                                        <div class="custom-control custom-radio  " checked>
+                                            <input type="radio" id="inline4" name="Company" formControlName="Company"
+                                                value="4" checked>
+                                            <label class="custom-control" for="inline4"
+                                                aria-checked="true">Registered</label>
+                                            <input type="radio" id="inline5" name="Company" formControlName="Company"
+                                                value="5">
+                                            <label class="custom-control-label" for="inline5"
+                                                aria-checked="true">Registered
+                                                but not received TRN</label>
+                                            <input type="radio" id="inline6" name="Company" formControlName="Company"
+                                                value="3">
+                                            <label class="custom-control-label" for="inline6" aria-checked="true">Not
+                                                Registered</label>
+                                        </div>
+                                        <div class="showdiv" *ngIf="registrationForm.get('Company')?.value=='4'">
+
+                                            <label for="TRNnumber">
+                                                <p>TRN Number<sup>*</sup></p>
+                                            </label>
+                                            <input type=" tel" formControlName="TRNnumber" required class="form-control"
+                                                id="TRNnumber">
+                                            <span class="text-danger"
+                                                *ngIf="this.registrationForm.get('TRNnumber')?.hasError('required') && this.registrationForm.get('TRNnumber')?.touched">TRN
+                                                number is required
+                                                isrequired</span>
+                                        </div>
+                                        <div>
+                                            <label for="CompanyName">
+                                                <p>CompanyName<sup>*</sup></p>
+                                            </label>
+                                            <input type="text" formControlName="CompanyName" class="form-control"
+                                                id="CompanyName" placeholder="CompanyName">
+                                            <span class="text-danger"
+                                                *ngIf="this.registrationForm.get('CompanyName')?.hasError('required') && this.registrationForm.get('CompanyName')?.touched">CompanyName
+                                                is required</span>
+
+                                        </div>
+                                        <div class="mb-3 row">
+
+
+
+
+
+                                            <label for="Companyemail"
+                                                class="col-sm-2 col-form-label">CompanyEmail<sup>*</sup></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" formControlName="Companyemail" required
+                                                    class="form-control" id="Companyemail" value="">
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Companyemail')?.hasError('required') && this.registrationForm.get('Companyemail')?.touched">Company
+                                                    Email is Required</span>
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Companyemail')?.hasError('pattern') && this.registrationForm.get('Companyemail')?.touched">email
+                                                    should @ and alphabelts[A-Z]and Numbers[0-9] .com</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="CompanyMobilenumber">
+                                                <p>Company Mobile Number<sup>*</sup></p>
+                                            </label>
+                                            <input type=" tel" formControlName="CompanyMobilenumber" required
+                                                class="form-control" id="CompanyMobilenumber">
+                                            <span class="text-danger"
+                                                *ngIf="this.registrationForm.get('CompanyMobilenumber')?.hasError('required') && this.registrationForm.get('CompanyMobilenumber')?.touched">Company
+                                                Mobile Number is required
+
+                                            </span>
+                                            <span class="text-danger"
+                                                *ngIf="this.registrationForm.get('CompanyMobilenumber')?.hasError('pattern') && this.registrationForm.get('CompanyMobilenumber')?.touched">10
+                                                digit must
+
+                                            </span>
+                                            <span class="text-danger"
+                                                *ngIf="this.registrationForm.get('CompanyMobilenumber')?.hasError('maxLength') && this.registrationForm.get('CompanyMobilenumber')?.touched">10
+                                                digit must
+
+                                            </span>
+                                            <span class="text-danger"
+                                                *ngIf="this.registrationForm.get('CompanyMobilenumber')?.hasError('required') && this.registrationForm.get('CompanyMobilenumber')?.touched">10
+                                                digit must
+
+                                            </span>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div>
+
+
+
+                                <div>
+                                    <label for="phoneNumber">
+                                        <p>PhoneNumber<sup>*</sup></p>
+                                    </label>
+                                    <input type=" tel" formControlName="PhoneNumber" required class="form-control"
+                                        id="PhoneNumber" placeholder="9876543210">
+                                    <span class="text-danger"
+                                        *ngIf="this.registrationForm.get('PhoneNumber')?.hasError('required') && this.registrationForm.get('PhoneNumber')?.touched">phonenumber
+                                        isrequired</span>
+                                    <span class="text-danger"
+                                        *ngIf="this.registrationForm.get('PhoneNumber')?.hasError('pattern') && this.registrationForm.get('PhoneNumber')?.touched">10
+                                        digit compulsary
+                                    </span>
+
+                                    <span class="text-danger"
+                                        *ngIf="this.registrationForm.get('PhoneNumber')?.hasError('minLength') || this.registrationForm.get('maxLength')?.touched">it
+                                        should be 10 digits</span>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="staticEmail" class="col-sm-2 col-form-label">Email<sup>*</sup></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" formControlName="email" required class="form-control"
+                                            id="staticEmail" value="">
+                                        <span class="text-danger"
+                                            *ngIf="registrationForm.get('email')?.hasError('pattern') || registrationForm.get('registrationForm')?.touched">email
+                                            should @ and alphabelts[A-Z]and Numbers[0-9] .com
+                                        </span>
+                                        <span class="text-danger"
+                                            *ngIf="registrationForm.get('email')?.hasError('required') && registrationForm.get('email')?.touched">Email
+                                            required </span>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="Billingaddress">
+                                                    <p>BillingAddress<sup>*</sup></p>
+                                                </label>
+                                                <input type="text" formControlName="Billingaddress" required
+                                                    class="form-control" id="Billingaddress"
+                                                    placeholder="Enter Billing Address">
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Billingaddress')?.hasError('required') && this.registrationForm.get('Billingaddress')?.touched">Billing
+                                                    Addressisrequired</span>
+                                            </div>
+                                            <div class="col">
+                                                <label for="Box">
+                                                    <p>P.O.Box<sup>*</sup></p>
+                                                </label>
+                                                <input type="text" formControlName="Box" required class="form-control"
+                                                    id="Box" placeholder="Enter p.o.Box">
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Box')?.hasError('required') && this.registrationForm.get('Box')?.touched">P.O
+                                                    BOX requiredred</span>
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Box')?.hasError('minlength') && this.registrationForm.get('Box')?.touched">it
+                                                    should be 3-6 digits</span>
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Box')?.hasError('maxLength') && this.registrationForm.get('Box')?.touched">it
+                                                    should be Digits only</span>
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Box')?.hasError('minlength') && this.registrationForm.get('Box')?.touched">
+                                                </span>
+                                                <span class="text-danger"
+                                                    *ngIf="this.registrationForm.get('Box')?.hasError('pattern') && this.registrationForm.get('Box')?.touched">it
+                                                    should be Digits only</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="dropdown">
+                                            Country
+                                            <select name="city" class="rounded-inputs20 select-select col-md-3" formControlName="country" (change)="onChange($event)">
+                                                <option *ngFor="let country of countries"  [value]="country.id">{{country.name}}</option>
+                                                </select>
+
+                                              city
+                                                <select formControlName="cities" id="sel1" name="Country" class="rounded-inputs20 select-select col-md-3">
+
+                                                  <option *ngFor="let ele of city" [value]="ele">{{ele.StateName}}</option>
+
+                                                </select>
+                                            </div>
+                                    </div>
+                                <div class="mb-3 row">
+                                    <label for="inputPassword"
+                                        class="col-sm-2 col-form-label">Password<sup>*</sup></label>
+                                    <div class="col-sm-10">
+                                        <input type="password" formControlName="password" class="form-control"
+                                            id="inputPassword" value="">
+                                        <span class="text-danger"
+                                            *ngIf="registrationForm.get('password')?.hasError('required') && registrationForm.get('password')?.touched">password
+                                            required</span>
+                                        <span class="text-danger"
+                                            *ngIf="registrationForm.get('password')?.hasError('pattern') && registrationForm.get('password')?.touched">HINT:Password
+                                            should not contain first name and last name Minimum 8 characters, at
+                                            least 1
+                                            uppercase letter, 1 lowercase letter, 1 number and 1 special character
+                                        </span>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                I Accept Terms & conditions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked" checked>
+                                            <label class="form-check-label" for="flexCheckChecked">
+                                                Subscribe to Newsletter
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class=" md-3">
+                                        <button type="submit" class="btn btn-success"
+                                            [disabled]="!registrationForm.valid">Register</button>
+                                    </div>
+                                    <div class="md-12 ">
+
+                                        <button type="Edit" class="btn btn-primary" onclick="patchValue()">
+                                            prefill
+
+                                        </button>
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>

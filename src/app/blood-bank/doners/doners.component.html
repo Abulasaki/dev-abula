@@ -1,0 +1,74 @@
+<div class="donors-page p-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Donors List</h2>
+    <button mat-raised-button color="primary" (click)="openAddDonorDialog()">
+      <i class="fas fa-plus"></i> Add Donor
+    </button>
+  </div>
+ <table mat-table [dataSource]="donors" class="mat-elevation-z8" style="width: 100%;">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let donor"> {{donor.name}} </td>
+    </ng-container>
+
+    <!-- Blood Group Column -->
+    <ng-container matColumnDef="bloodGroup">
+      <th mat-header-cell *matHeaderCellDef> Blood Group </th>
+      <td mat-cell *matCellDef="let donor"> {{donor.bloodGroup}} </td>
+    </ng-container>
+
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let donor"> {{donor.age}} </td>
+    </ng-container>
+
+    <!-- Contact Column -->
+    <ng-container matColumnDef="contact">
+      <th mat-header-cell *matHeaderCellDef> Contact </th>
+      <td mat-cell *matCellDef="let donor"> {{donor.contact}} </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let donor"> {{donor.address}} </td>
+    </ng-container>
+
+    <!-- Last Donate Date Column -->
+    <ng-container matColumnDef="lastDonateDate">
+      <th mat-header-cell *matHeaderCellDef> Last Donate Date </th>
+      <td mat-cell *matCellDef="let donor"> {{donor.lastDonateDate | date:'mediumDate'}} </td>
+    </ng-container>
+
+    <!-- Willing to Donate Column -->
+    <ng-container matColumnDef="willingToDonate">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Willing to Donate </th>
+      <td mat-cell *matCellDef="let donor" class="text-center">
+        <mat-icon [color]="donor.willingToDonate ? 'primary' : 'warn'">
+          {{ donor.willingToDonate ? 'check_circle' : 'cancel' }}
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let donor">
+        <button mat-icon-button color="accent" (click)="editDonor(donor)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteDonor(donor)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Header & Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

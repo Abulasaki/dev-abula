@@ -1,0 +1,75 @@
+.login-page {
+  min-height: 100vh; /* allows flexibility instead of fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  overflow: hidden; /* removes scrollbars */
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.logo-img {
+  height: 4.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.register-link {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+/* 👇 Title below login card */
+.fw-custom {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #0d47a1;
+  padding: 2rem; /* spacing below login card */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove body default margin that may cause scroll */
+body {
+  margin: 0;
+  overflow: hidden;
+}

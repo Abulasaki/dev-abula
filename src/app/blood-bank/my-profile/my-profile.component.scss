@@ -1,0 +1,73 @@
+.donor-profile-page {
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+  min-height: 100vh;
+  padding: 20px;
+
+  .topbar {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    .profile-card {
+      width: 450px;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      background: #ffffff;
+
+      .profile-header {
+        text-align: center;
+        h2 {
+          font-size: 28px;
+          font-weight: 700;
+          margin-bottom: 5px;
+        }
+        p {
+          font-size: 16px;
+          color: #555;
+        }
+      }
+
+      .profile-details {
+        margin-top: 20px;
+
+        .detail-row {
+          display: flex;
+          align-items: center;
+          padding: 8px 0;
+          font-size: 15px;
+
+          mat-icon {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .profile-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+
+        button {
+          width: 48%;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          transition: 0.3s;
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+          }
+        }
+      }
+    }
+  }
+}

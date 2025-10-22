@@ -1,0 +1,99 @@
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/home" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#fornt" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i>    <i class="bi-bootstrap fs-1"></i><span class="ms-1 d-none d-sm-inline">posts</span> </a>
+                        
+                    </li>
+                    <li>
+                        <a href="/courses" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Courses</span></a>
+                    </li>
+                    <li>
+                        <a href="/pages" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">pages</span></a>
+                       
+                    </li>
+                   
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Logout</span> </a>
+                    
+                </ul>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    
+                </div>
+            </div>
+        <div class="col-md-10">
+    <mat-toolbar color="warn">
+        <button mat-icon-button class="example-icon" ariea-label="example-icon with menu icon">
+            <mat-icon>supervised_user_circle</mat-icon>
+        </button>
+        <span>Course</span>
+        <span class="example-spacer"></span>
+<button mat-raised-button color="warn" (click)="open()">Add course</button>
+
+    </mat-toolbar>
+ 
+<div class="container">
+    
+        <div class="mat-evaluvation-z8">
+            <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef >id</th>
+                <td mat-cell *matCellDef="let row">{{row.id}}</td>
+            </ng-container>
+            <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef >image</th>
+                <td mat-cell *matCellDef ="let row"><img class="course-image" [src]="'assets'+'row.image'" /></td>
+            </ng-container>
+            <ng-container matColumnDef="coursename">
+                <th mat-header-cell *matHeaderCellDef >Course name</th>
+                <td mat-cell *matCellDef ="let row">{{row.coursename}}</td>
+            </ng-container>
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef >Title</th>
+                <td mat-cell *matCellDef ="let row">{{row.title}}</td>
+            </ng-container>
+            <ng-container matColumnDef="postedon">
+                <th mat-header-cell *matHeaderCellDef  >Posted on</th>
+                <td mat-cell *matCellDef ="let row">{{row.postedon}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef >Action</th>
+                <td mat-cell *matCellDef ="let row">
+            
+            <button mat-icon-button color="primary" >
+                <mat-icon (click)="edit(row.id)">edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn">
+                <mat-icon (click)="delete(row.id)">delete</mat-icon>
+              </button>
+                </td>
+            </ng-container>
+              
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter </td>
+      </tr>
+            </table>
+            
+      <mat-paginator [pageSizeOptions]="[3,6 ,9,12,15, 100]" aria-label="Select page of users"></mat-paginator>
+            
+
+        </div>
+
+    
+</div> 

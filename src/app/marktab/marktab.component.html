@@ -1,0 +1,66 @@
+<p>marktab works!</p>
+
+  
+     <div class="container">
+         <div class="margin-top:10px;">
+             <mat-form-field appearance="standard">
+                 <mat-label>Filter</mat-label>
+                 <input matInput (keyup)="applyFilter($event)" #input>
+               </mat-form-field>
+               
+               <div class="mat-elevation-z8 ">
+                 <table mat-table [dataSource]="dataSource" matSort>
+               
+                   <!-- ID Column -->
+                   <ng-container matColumnDef="tamil">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Tamil</th>
+                     <td mat-cell *matCellDef="let row"> {{row.tamil}} </td>
+                   </ng-container>
+               
+                   <!-- Progress Column -->
+                   <ng-container matColumnDef="English">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header> English</th>
+                     <td mat-cell *matCellDef="let row"> {{row.lastname}} </td>
+                   </ng-container>
+               
+                   <!-- Name Column -->
+                   <ng-container matColumnDef="Maths">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Maths</th>
+                     <td mat-cell *matCellDef="let row"> {{row.Maths}} </td>
+                     
+                   </ng-container>
+               
+                   <!-- Fruit Column -->
+                   <ng-container matColumnDef="physics">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header> physics </th>
+                     <td mat-cell *matCellDef="let row"> {{row.physics}} </td>
+                    
+ 
+                     
+                   </ng-container>
+                   <ng-container matColumnDef="computerscience">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header> computerscience </th>
+                     <td mat-cell *matCellDef="let row"> {{row.computerscience}} </td>
+                   </ng-container>
+                   <ng-container matColumnDef="Chemistry">
+                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Chemistry</th>
+                     <td mat-cell *matCellDef="let row"> {{row.Chemistry}} </td>
+                   </ng-container>
+                  
+                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+               
+                   <!-- Row shown when there is no matching data. -->
+                   <tr class="mat-row" *matNoDataRow>
+                     <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                   </tr>
+                 </table>
+               
+                 <mat-paginator [pageSizeOptions]="[3,6 ,9,12,15, 100]" aria-label="Select page of users"></mat-paginator>
+               </div>
+         </div>
+     </div>
+     
+ 
+ 
+        

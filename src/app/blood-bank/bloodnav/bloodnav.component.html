@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <img src="../../assets/Sangagiri vivekantha.jpeg" alt="Logo" class="logo">
+
+    <nav>
+      <a *ngIf="!Role" routerLink="/blood/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a *ngIf="!Role" routerLink="/blood/donors" routerLinkActive="active-link">
+        <i class="fas fa-user-friends"></i> Donors
+      </a>
+      <a  *ngIf="!Role" routerLink="/blood/requests" routerLinkActive="active-link">
+        <i class="fas fa-tint"></i> Requests
+      </a>
+      <a  *ngIf="!Role" routerLink="/blood/admin" routerLinkActive="active-link">
+        <i class="fas fa-user-cog"></i> Admin
+      </a>
+        <a  *ngIf="Role" routerLink="/blood/profile" routerLinkActive="active-link">
+        <i class="fas fa-user-cog"></i> My Profile
+      </a>
+           <a  *ngIf="Role" routerLink="/blood/my-req" routerLinkActive="active-link">
+        <i class="fas fa-user-cog"></i> My Requests
+      </a>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="topbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span class="toolbar-title">VIVEKANANDA ONLINE BLOOD BANK</span>
+      <span class="spacer"></span>
+
+      <!-- User welcome -->
+      <span class="user-name">Welcome, {{currentUser?currentUser:'Sahana'}}</span>
+
+      <!-- Logout button -->
+      <button mat-icon-button color="warn" matTooltip="Logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

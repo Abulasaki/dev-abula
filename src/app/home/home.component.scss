@@ -1,0 +1,30 @@
+.flex-container 
+{
+    display: flex;
+
+    justify-content: space-between;
+}
+.flex-container > div {
+    margin: 5px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    &:hover{
+        background-color: bisque;
+    }
+      
+      
+    
+  }
+  .container-fluid
+  {
+    background-image: url("../../assets/simple-pattern-with-css3.png");
+  }
+  .card
+{
+    width: 200px;
+    height: 500px;
+    &:hover{
+      background-color: rgb(161, 161, 196);
+    }
+}

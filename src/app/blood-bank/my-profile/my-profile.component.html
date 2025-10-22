@@ -1,0 +1,54 @@
+<div class="donor-profile-page">
+
+  <mat-toolbar color="primary" class="topbar">
+    <span>Vivekananda Online Blood Bank</span>
+    <span class="spacer"></span>
+    <!-- <button mat-raised-button color="warn" (click)="logout()">
+      Logout
+    </button> -->
+  </mat-toolbar>
+
+  <div class="profile-container">
+    <mat-card class="profile-card">
+      <div class="profile-header">
+        <h2>{{ donor?.name }}</h2>
+        <p>{{ donor?.bloodGroup }} | Age: {{ donor?.age }}</p>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="profile-details">
+        <div class="detail-row">
+          <mat-icon>phone</mat-icon>
+          <span>{{ donor?.contact }}</span>
+        </div>
+        <div class="detail-row">
+          <mat-icon>home</mat-icon>
+          <span>{{ donor?.address }}</span>
+        </div>
+        <div class="detail-row">
+          <mat-icon>event</mat-icon>
+          <span>Last Donate Date: {{ donor?.lastDonateDate | date:'mediumDate' }}</span>
+        </div>
+        <div class="detail-row">
+          <mat-icon [color]="donor?.willingToDonate ? 'primary' : 'warn'">
+            {{ donor?.willingToDonate ? 'check_circle' : 'cancel' }}
+          </mat-icon>
+          <span>Willing to Donate: {{ donor?.willingToDonate ? 'Yes' : 'No' }}</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="profile-actions">
+        <button mat-raised-button color="accent" routerLink="/blood/my-req">
+          <mat-icon>local_hospital</mat-icon> Request Blood
+        </button>
+        <button mat-raised-button color="primary" (click)="editProfile(donor)">
+          <mat-icon>edit</mat-icon> Edit Profile
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+</div>

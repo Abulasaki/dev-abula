@@ -1,0 +1,201 @@
+<div class="container">
+  <div class="row">
+    <div class="justify-content-center">
+      <div class="col-md-6">
+        <div class="card ">
+          <h4>Registration Form</h4>
+
+
+          <form [formGroup]="userForm" (ngSubmit)="submit()">
+            {{userForm.value |json}}
+
+            <div class="col-md-6">
+              <label for="firstName">UserName<sup>*</sup> </label>
+              <input type="text" class="form-control" formControlName="firstName" id="firstName">
+              <span class="text-danger"
+                *ngIf="userForm.get('firstName')?.hasError('required') && userForm.get('firstName')?.touched">UserName
+                required
+                is required
+
+              </span>
+            </div>
+            <div class="col-md-6">
+              <label for="password">Password<sup>*</sup></label>
+              <input type="text " required class="form-control" formControlName="password" id="password">
+
+
+              <span class="text-danger"
+                *ngIf="userForm.get('password')?.hasError('required') && userForm.get('password')?.touched">password
+                required</span>
+              <span class="text-danger"
+                *ngIf="userForm.get('password')?.hasError('pattern') && userForm.get('password')?.touched">password
+                should br number,alphabets digits
+              </span>
+            </div>
+            <div class="col-md-6">
+              <label for="email">Email<sup>*</sup></label>
+              <input type="text" required class="form-control" formControlName="email" id="email">
+              <span class="text-danger"
+                *ngIf="userForm.get('email')?.hasError('required')&& userForm.get('email')?.touched">email is required
+              </span>
+              <span class="text-danger"
+                *ngIf="userForm.get('email')?.hasError('pattern') || userForm.get('userForm')?.touched">email shoule be
+
+              </span>
+            </div>
+
+
+            <div class="col-md-6">
+              <label for="PhoneNumber">PhoneNumber<sup>*</sup></label>
+              <input type="tel" required class="form-control" formControlName="PhoneNumber" id="PhoneNumber">
+              <span class="text-danger"
+                *ngIf="userForm.get('PhoneNumber')?.hasError('required') && userForm.get('PhoneNumber')?.touched">phone
+                number required</span>
+              <span class="text-danger"
+                *ngIf="userForm.get('PhoneNumber')?.hasError('pattern') && userForm.get('PhoneNumber')?.touched">phone
+                number should be 10 digits</span>
+              <span class="text-danger"
+                *ngIf="userForm.get('PhoneNumber')?.hasError('minLength') && userForm.get('PhoneNumber')?.touched">minimum
+                10 digits</span>
+              <span class="text-danger"
+                *ngIf="userForm.get('PhoneNumber')?.hasError('maxLength') && userForm.get('PhoneNumber')?.touched">max
+                10 digits</span>
+
+            </div>
+            <div class="col-md-6">
+              <label for="Country">Country</label>
+
+              <!--  <select id="Country" class="form-control" formControlName="Country"
+                    (change)="onChangeCountry($event)">
+                    <option *ngFor="let item of Contries" [value]="item.id">{{item.name}}</option>
+
+                  </select>
+
+
+
+                  <label for="state">State</label>
+                  <select id="state" class="form-control" formControlName="state" (change)="onChangeState($event)">
+                    <option *ngFor="let state of state" [value]="state.id">{{state.name}}</option>
+
+                  </select>
+                  <label for="city">city</label>
+                  <select id="city" class="form-control" formControlName="city">
+                    <option *ngFor="let city of city" [value]="cities">{{city.name}}</option>
+
+                  </select>
+                </div>
+              <div *ngFor="let data of Data; let i=index">
+                  <label>
+                    <input type="checkbox" [value]="data.value" formControlName="check"(change)="onCheckboxChange($event)" />
+                    {{data.value}}
+                  </label>
+                </div>-->
+            </div>
+
+              <ul>
+
+                <li> <input type="checkbox" [(ngModel)]="selectedAll" [ngModelOptions]="{standalone: true}"
+                    (change)="selectAll();" />
+                </li>
+                <li *ngFor="let n of names">
+                  <input type="checkbox" [(ngModel)]="n.selected" [ngModelOptions]="{standalone: true}"
+                    (change)="checkIfAllSelected();">
+                  {{n.name}}
+                </li>
+              </ul>
+
+              <!--      <div class="container mt-5">
+  
+                 
+                  
+                  <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th>Id</th>
+                          <th>Name</th>
+                          <th>Username</th>
+                          <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let user of user">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>-->
+                
+
+              <div>
+                <button type="submit" class="btn btn-primary">submit</button>
+              </div>
+              <div class="col-md-12 ">
+
+                <button type="Edit" class="btn btn-primary" onClick="patchValue()">
+                  prefill
+
+                </button>
+              </div>
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z6 demo-table">
+                Position Column
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef>No.</th>
+                  <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+
+                Name Column
+                <ng-container matColumnDef="username">
+                  <th mat-header-cell *matHeaderCellDef>UserName</th>
+                  <td mat-cell *matCellDef="let element">{{element.username}}</td>
+                </ng-container>
+
+                Weight Column
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef>email</th>
+                  <td mat-cell *matCellDef="let element">{{element.email}}</td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef></th>Name
+                  <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+
+                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <!--     <tr
+                    mat-row
+                    (click)="clickedRows.add(row)"
+                    [class.demo-row-is-clicked]="clickedRows.has(row)"
+                    *matRowDef="let row; columns: displayedColumns;"
+                ></tr>
+            
+              
+              <div>
+                <h3>
+                  Click Log
+                </h3>-->
+             
+              
+             <!-- <div *ngIf="!clickedRows.size">
+                Clicked rows will be logged here
+              </div>
+              
+              <ul>
+                <li *ngFor="let clickedRow of clickedRows">
+                  Clicked on {{clickedRow.name}}
+                </li>
+              </ul>-->
+              </table>
+            
+    
+               
+  
+          </form>
+        </div>
+      </div>
+      
+    </div>
+    

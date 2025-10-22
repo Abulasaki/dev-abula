@@ -1,0 +1,29 @@
+<form [formGroup]="regForm">
+    <img style="height: 4.5rem;" src="../../assets/sahosoft logo.png">
+    <div class="container m-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card p-3 m-2">
+                    <h3>Register here!</h3>
+    <label for="firstname">username</label>
+    <input class="form-control" formControlName="firstname"id="firstname" placeholder="firstname" ><br>
+    <label for="email">Email</label>
+    <input class="form-control" formControlName="email"id="email" placeholder="email" ><br>
+    <label for="Number">Number</label>
+    <input class="form-control" formControlName="Number"id="Number" placeholder="Number" ><br>
+    <label label class="form-check-label" for="validationFormCheck1">password</label>
+    <input type="password" class="form-control"formControlName="password" id="validationFormCheck1" placeholder="password" >
+    <label label class="Role" for="validationFormCheck1" value="Student"></label>
+    <br>
+   
+    
+    <div class=" md-3">
+        <button type="submit" class="btn btn-success" (click)="Register()">Register</button>
+    </div>
+    <a style="color:rgb(22, 204, 201);"routerLink="/login" >already registred? go the the login page</a>
+  </div>
+  <!-- <div class="form-control" formControlName="Role"id="student" value="student" ></div> -->
+  </div>
+  </div>
+    </div>
+</form>

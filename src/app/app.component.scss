@@ -1,0 +1,148 @@
+// .example-spacer {
+//     flex: 1 1 auto;
+//   }
+ 
+ 
+//   p{
+//     font-family: Arial, Helvetica, sans-serif;
+//     background-color: blanchedalmond;
+//     color: azure;
+//     font-size: 200%;
+//     border: 2px solid powderblue;
+//     padding: 20px;
+//     margin: 10px;
+   
+    
+  
+//   }
+ 
+  
+//   nav{
+//     background-color: burlywood;
+//     color: black;
+//     text-align: center;
+
+//   }
+// nav li{
+//   display: inline-block;
+//   font-size: 20px;
+// }
+// mat-sidenav{
+//   width: 200px;
+//   margin: 16px;
+//   border-right: none;
+//   background-color: black;
+//   color: white;
+//   border-radius: 10px;
+//   text-align: center;
+// }
+// .mat-sidenav-container
+// {
+//   height: calc(100vx - 65px)
+
+// }
+// .content
+// {
+//   height: calc(100vx - 98px)
+// }
+// // nav{
+// //     background-color: burlywood;
+// //     color: black;
+// //     text-align: center;
+
+// //   }
+// nav-list{
+//   display: inline-block;
+//   font-size: 20px;
+  
+ 
+// }
+// mat-sidenav{
+//   width: 250px;
+//   margin: 10px;
+//   border-right: none;
+//   background-color:rgb(128, 128, 165);
+//   color: white;
+//   border-radius: 10px;
+//   text-align: center;
+  
+// }
+// .mat-sidenav-container
+// {
+//   height:"88vh"
+
+// }
+// .content
+// {
+//   height: calc(100vx - 98px);
+//   margin: 16px;
+//   margin-left: 10px;
+ 
+// }
+// .menu-button
+// {
+//   width: 100px;
+//   color: black;
+//   display: flex;
+  
+// }
+// .mat-icon{
+// margin: 16px;
+// padding:1px;
+
+// }
+// h1{
+//   justify-content: center;
+//   display: flex;
+//   -ms-flex-item-align: center;
+// }
+// .mat-list-item 
+// {
+//   &:hover
+//   {
+//     background-color:lightblue;
+//     border-radius: 20px;
+//     display: flex;
+//     -ms-flex-item-align: center;
+    
+//   }
+// }
+.container-fluid
+{
+  background-color: pink;
+  color: white;
+  background-image: url();
+}
+h1{
+  justify-content: end;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+  font-style:initial;
+  &:hover
+  {
+    background-color:teal;
+    transition: 2s;
+    
+  }
+}
+.model-body {
+  min-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  color: #fff; }
+/*		body {
+    overflow:hidden;
+}*/
+h2{
+  // display: flex;
+  // justify-content: end;
+  font-size: 30px;
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: end;
+}
+
