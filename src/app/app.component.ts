@@ -29,17 +29,17 @@ export class AppComponent implements OnInit,DoCheck {
   currentrole:any
   displayitem=false
   userName!:string;
-  
+
 constructor(private http:HttpClient,private router: Router,private auth:AuthGuard,private authser:AuthService)
    {
-    
+
 
    }
-  
-  
+
+
   ngOnInit()
   {
-  
+
    this.user()
   }
   ngDoCheck() {
@@ -51,10 +51,10 @@ constructor(private http:HttpClient,private router: Router,private auth:AuthGuar
   {
     this.displayitem=true
   }
-    
+
   }
-  
-   
+
+
   user()
   {
     //   console.log(this.user)
@@ -67,12 +67,12 @@ constructor(private http:HttpClient,private router: Router,private auth:AuthGuar
   //  this.displayuser=(this.currentrole=='admin'||this.currentrole=='user')
   //   return user;
   }
-  
+
   Logout()
   {
-    localStorage.clear(),
+    localStorage.clear()
     this.router.navigate(['/login'])
-   
+
   }
 }
 
